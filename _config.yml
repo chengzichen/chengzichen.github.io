@@ -1,15 +1,15 @@
 # Site settings
-title: Clean Blog
+title: Denghaochen Blog
 header-img: img/home-bg.jpg
 email: 13340199938@163.com
-copyright_name: Your/Project/Corporate Name
-description: "Write your site description here. It will be used as your sites meta description as well!"
+copyright_name: Mr Deng
+description: "不忘初心,方能始终"
 baseurl: "https://chengzichen.github.io/"
 url: "https://chengzichen.github.io/"
 twitter_username: SBootstrap
 github_username:  davidtmiller
 facebook_username:  StartBootstrap
-email_username:  your-email@yourdomain.com
+email_username:  13340199938@163.com
 
 # Google Analytics
 # To enable google analytics, uncomment below line with a valid Google Tracking ID
