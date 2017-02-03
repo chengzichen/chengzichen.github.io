@@ -4,16 +4,16 @@
 
 11/9/2016 1:13:49 PM 
 
-#**Android的热修复**
+# **Android的热修复**
 
-#前言:
+# 前言:
 	
 随着时代的发展,由于公司的项目需要去求变化平凡计划总赶不上变化,`react-native`的高灵活性,开发周期短,更新速度快`react-native`以及一些混合开发越来越被看好,然而主要原因之一:这种混合开发的方式容错率大,更新和修复BUG快.不用发布版本就可以让用户不觉的情况下就更新对应的内容或者BUG,我们不能否认混合开发的快捷,正在此前提下热修复和热更新技术也得到了非常大的发展,不管热修复还是热更新,都是对app的内容或者逻辑变化做出像web页面更新一样的体验.而本文只对热修复进行探索,不对`react-native`进行深入研究.而今天的主人公的话是[`微信Tinker.`](https://github.com/Tencent/tinker/wiki)
 
 不久前微信开源了Tinker,github的star数量直飚5000+,我的天,还在等什么,学习学习.
 
 
-##什么是热修复
+## 什么是热修复
 ----------
 热修复补丁（[hotfix](http://baike.baidu.com/subview/351151/351151.htm)），又称为patch，指能够修复软件漏洞的一些代码，是一种快速、低成本修复产品软件版本缺陷的方式。
 前言中描述的"不用发布版本就可以让用户不觉的情况下就更新对应的内容或者BUG"可能不算准确,所以我自行百度了一下.
@@ -21,7 +21,7 @@
 常做法,那就是程序猿加班搞定bug,然后测试,重新打包并发布。这样带来的问题就是成本高,效率低。于是,热 
 修复就应运而生.一般通过事先设定的接口从网上下载无Bug的代码来替换有Bug的代码。这样就省事多了,用 
 户体验也好.
-###原理
+### 原理
 
 类似与插件开发,关于插件开发原理,看这篇 [Android插件原理剖析](http://www.alloyteam.com/2014/04/android-cha-jian-yuan-li-pou-xi/) ,其中介绍了一下java中的类加载器和android中的类加载器. 热修复就是利用android中的 DexClassLoader 类加载器,动态加载补丁dex,替换有bug的类
 
@@ -32,7 +32,7 @@
 - [https://github.com/bunnyblue/DroidFix](https://github.com/bunnyblue/DroidFix)
 
 
-##微信Tinker
+## 微信Tinker
 
 Tinker的github地址:[https://github.com/Tencent/tinke](https://github.com/Tencent/tinker)
 
@@ -107,7 +107,7 @@ Android studio 一般左下角的那个cmd控制台一样的东西
  ![](http://i.imgur.com/n9YNE7U.png)
 
 这样在app/build/outputs/tinkerPatch/debug/patch_signed_7zip.apk路径下找到这个差异包,也就是我们俗称的补丁.
-#推送补丁
+# 推送补丁
 然后把patch_signed_7zip.apk放到手机SD卡中去使用命令
 `adb push ./app/build/outputs/tinkerPatch/debug/patch_signed_7zip.apk /storage/sdcard0/`
 这里放置的路径与apk中获取补丁位置一致
@@ -126,9 +126,9 @@ Android studio 一般左下角的那个cmd控制台一样的东西
 
 --------------------------
 
-#集成到自己的项目中
+# 集成到自己的项目中
 
-###1. 添加gradle依赖
+### 1. 添加gradle依赖
 
 在项目的build.gradle中，添加tinker-patch-gradle-plugin的依赖
 
@@ -151,7 +151,7 @@ Android studio 一般左下角的那个cmd控制台一样的东西
 	apply plugin: 'com.tencent.tinker.patch'
 
 
-###2. 添加生成补丁方法
+### 2. 添加生成补丁方法
 
 	tinkerPatch {
     //有问题的apk的地址,就是要修复BUG的那个apk,这是在电脑上位置
@@ -183,7 +183,7 @@ Android studio 一般左下角的那个cmd控制台一样的东西
 }
 
 
-###3. 配置Application
+### 3. 配置Application
 
 程序启动时会加载默认的Application类，这导致我们补丁包是无法对它做修改了。如何规避？在这里我们并没有使用类似InstantRun hook Application的方式，而是通过代码框架的方式来避免，这也是为了尽量少的去反射，提升框架的兼容性。
 
@@ -249,7 +249,7 @@ Application的attachBaseContext方法实现要单独移动到onBaseContextAttach
 **最后我们都配置好了那怎么得到补丁包呢?**
 
 也是一样
-#步骤1:**编译运行原版apk**
+# 步骤1:**编译运行原版apk**
 把生成的apk放在自己定义的路径下 	
 	
 	tinkerPatch {
@@ -258,13 +258,13 @@ Application的attachBaseContext方法实现要单独移动到onBaseContextAttach
     oldApk = "D://1//app-debug-old.apk"
 		...
 		}
-#步骤2:修改源码 生成新版apk 补丁
+# 步骤2:修改源码 生成新版apk 补丁
 这里修改源码指的是实际项目中修复BUG更改的代码...
 
 后续的步骤都一样就搞定了............
 -------------------
 
-#Tinker的局限
+# Tinker的局限
 
 	如果出现以下的情况，并且ignoreWarning为false，我们将中断编译。因为这些情况可能会导致编译出来的patch包带来风险：
 1. minSdkVersion小于14，但是dexMode的值为"raw";
