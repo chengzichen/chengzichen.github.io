@@ -1,14 +1,14 @@
 # Site settings
-title: Denghaochen Blog
+title: Haochen Blog
 header-img: img/home-bg.jpg
 email: 13340199938@163.com
 copyright_name: Mr Deng
 description: "不忘初心,方能始终"
 baseurl: "https://chengzichen.github.io/"
 url: "https://chengzichen.github.io/"
-twitter_username: SBootstrap
-github_username:  davidtmiller
-facebook_username:  StartBootstrap
+twitter_username: 
+github_username:  https://github.com/chengzichen
+facebook_username:  
 email_username:  13340199938@163.com
 
 # Google Analytics
