@@ -5,7 +5,7 @@ header-img: img/home-bg.jpg
 email: 13310199938@163.com
 description: "关于Android开发,摄影 | 浩宸，Web & Android，Linux | 这里是 @haochen的个人博客，这个世界就是这么小。"
 keyword: "浩宸, chengzichen, chengzichen浩宸, @chengzichen_, 浩宸的博客, Hux Blog, 博客, 个人网站, 互联网, 前端, 小航怡, Vin, 小航怡的男朋友"
-# url: "https://huangxuan.me"              # your host, for absolute URL
+url: "https://chengzichen.github.io/"              # your host, for absolute URL
 baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 
@@ -52,9 +52,9 @@ kramdown:
 #disqus_username: _your_disqus_short_name_
 
 # Duoshuo settings
-duoshuo_username: 邓浩宸
+duoshuo_username:  haochen
 # Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
+duoshuo_share: false                     # set to false if you want to use Comment without Sharing
 
 
 
