@@ -4,7 +4,8 @@ title:      "Material Design 在使用CollapsingToolbarLayout使用和问题"
 subtitle:   "CollapsingToolbarLayout是用来对Toolbar进行再次包装的ViewGroup，主要是用于实现折叠（其实就是看起来像伸缩~）的App Bar效果。"
 date:     2/9/2017 4:41:44 PM 
 author:     "haochen"
-header-img: "post-bg-unix-linux.jpg"
+
+header-img: "img/post-bg-unix-linux.jpg"
 
 catalog: true
 
