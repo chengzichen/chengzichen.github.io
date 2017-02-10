@@ -91,7 +91,7 @@ service-worker: true
 # Friends
 friends: [
     {
-        title: "Su",
-        href: "http://su.gallery/"
+        title: "XDroid",
+        href: "https://github.com/limedroid"
     }
 ]
