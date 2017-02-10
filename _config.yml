@@ -72,13 +72,13 @@ ba_track_id: 7ed2a862350a50e08f95099747856c19
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "程序员就要有程序员的气质，<br>一个学摄影的程序员"
-sidebar-avatar: /img/avatar-hux.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/avatar-haochen.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
-featured-condition-size: 10              # A tag will be featured if the size of it is more than this condition value
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 
 
